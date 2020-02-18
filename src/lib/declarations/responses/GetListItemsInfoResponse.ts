@@ -2,7 +2,7 @@ import {EnumCurrency} from "../enums/EnumCurrency";
 
 type HistoryItem = [number, number];
 
-interface ItemData {
+export interface ItemData {
   "max": string
   "min": number,
   "average": number,

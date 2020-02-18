@@ -1,13 +1,13 @@
 import {EnumTradeDirection} from "../enums/EnumTradeDirection";
 
-interface ITradeItem {
+export interface ITradeItem {
   "id": string,
   "assetid": string,
   "classid": string,
   "instanceid": string
 }
 
-interface ITradeExtended {
+export interface ITradeExtended {
   "dir": EnumTradeDirection,
   "trade_id": string,
   "bot_id": string,

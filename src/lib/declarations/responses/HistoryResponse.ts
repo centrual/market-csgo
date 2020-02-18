@@ -2,7 +2,7 @@ import {EnumEventType} from "../enums/EnumEventType";
 import {EnumTradeStage} from "../enums/EnumTradeStage";
 import {EnumCurrency} from "../enums/EnumCurrency";
 
-interface IItemData {
+export interface IItemData {
   "event": EnumEventType,
   "stage": EnumTradeStage,
   "currency": EnumCurrency,

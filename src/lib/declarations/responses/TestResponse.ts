@@ -1,4 +1,4 @@
-interface ITestStatus {
+export interface ITestStatus {
   "user_token": boolean,
   "trade_check": boolean,
   "site_online": boolean,

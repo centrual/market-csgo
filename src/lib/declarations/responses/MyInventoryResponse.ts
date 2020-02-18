@@ -1,4 +1,4 @@
-interface IMyInventoryItem {
+export interface IMyInventoryItem {
   "id": string,
   "classid": string,
   "instanceid": string,

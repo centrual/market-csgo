@@ -1,13 +1,13 @@
 import {EnumCurrency} from "../enums/EnumCurrency";
 
-interface ISearchListItemExtraData {
+export interface ISearchListItemExtraData {
   "float": string,
   "phase": string,
   "percent_success": string,
   "average_time": string
 }
 
-interface ISearchListItem {
+export interface ISearchListItem {
   "id": number,
   "price": string,
   "class": number,

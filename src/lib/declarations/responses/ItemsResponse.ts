@@ -1,7 +1,7 @@
 import {EnumCurrency} from "../enums/EnumCurrency";
 import {EnumItemStatus} from "../enums/EnumItemStatus";
 
-interface IItem {
+export interface IItem {
   "item_id": string,
   "assetid": string,
   "classid": string,

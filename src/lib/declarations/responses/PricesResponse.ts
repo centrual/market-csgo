@@ -1,6 +1,6 @@
 import {EnumCurrency} from "../enums/EnumCurrency";
 
-interface IPricesItem {
+export interface IPricesItem {
   "market_hash_name": string,
   "volume": string,
   "price": string

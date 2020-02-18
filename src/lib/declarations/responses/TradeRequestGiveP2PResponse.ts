@@ -1,11 +1,11 @@
-interface ITradeRequestP2PItem {
+export interface ITradeRequestP2PItem {
   "appid": number,
   "contextid": number,
   "assetid": number,
   "amount": number
 }
 
-interface ITradeRequestP2POffer {
+export interface ITradeRequestP2POffer {
   "partner": number,
   "token": string,
   "tradeoffermessage": string,

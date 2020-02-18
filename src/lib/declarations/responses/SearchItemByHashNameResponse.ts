@@ -1,6 +1,6 @@
 import {EnumCurrency} from "../enums/EnumCurrency";
 
-interface ISearchItem {
+export interface ISearchItem {
   "market_hash_name": string,
   "price": number,
   "class": number,

@@ -1,6 +1,6 @@
 import {EnumCurrency} from "../enums/EnumCurrency";
 
-interface IItemWithClassAndInstance {
+export interface IItemWithClassAndInstance {
   "price": string,
   "market_hash_name": string,
   "buy_order": null|string,

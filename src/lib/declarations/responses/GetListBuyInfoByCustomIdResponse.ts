@@ -1,7 +1,7 @@
 import {EnumTradeStage} from "../enums/EnumTradeStage";
 import {EnumCurrency} from "../enums/EnumCurrency";
 
-interface IBuyInfo {
+export interface IBuyInfo {
   "stage": EnumTradeStage,
   "currency": EnumCurrency,
   "item_id": string,
