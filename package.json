@@ -1,6 +1,6 @@
 {
   "name": "market-csgo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "description": "API Helper for market.csgo.com",

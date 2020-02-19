@@ -62,6 +62,7 @@ import {GetListItemsInfoResponse} from "./declarations/responses/GetListItemsInf
 import {IGetListItemsInfoParameters} from "./declarations/parameters/GetListItemsInfoParameters";
 import {TestResponse} from "./declarations/responses/TestResponse";
 import {ITestParameters} from "./declarations/parameters/TestParameters";
+import {PricesWithClassAndInstancesResponse} from "./declarations/responses/PricesWithClassAndInstancesResponse";
 
 export class MarketCsgo {
   private Options: MarketCsgoOptions;
@@ -398,7 +399,9 @@ export class MarketCsgo {
    * @param forCurrency The currency unit
    * @param withClassAndInstance Fetches all items in the market with extended item data like class id and instance id when it sets to true
    */
-  public async Prices(forCurrency?: EnumCurrency, withClassAndInstance = false): Promise<PricesResponse> {
+  public async Prices(withClassAndInstance: true, forCurrency?: EnumCurrency): Promise<PricesWithClassAndInstancesResponse>;
+  public async Prices(withClassAndInstance: false, forCurrency?: EnumCurrency): Promise<PricesResponse>;
+  public async Prices(withClassAndInstance: boolean = false, forCurrency?: EnumCurrency): Promise<PricesResponse|PricesWithClassAndInstancesResponse>  {
     const endpointUrl = withClassAndInstance ? Endpoints.PricesWithClassAndInstances : Endpoints.Prices;
     const params = this.PricesParameters(forCurrency);
     return await this.CallAxios(endpointUrl, params, false);
