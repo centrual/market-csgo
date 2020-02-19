@@ -8,13 +8,15 @@ export interface IItemWithClassAndInstance {
   "popularity_7d": null|string
 }
 
+export type PricesWithClassAndInstancesObject = {
+  [ClassAndInstanceKey: string]: IItemWithClassAndInstance
+}
+
 interface IPricesWithClassAndInstancesSuccessResponse {
   "success": true,
   "time": string,
   "currency": EnumCurrency,
-  "items": {
-    [ClassAndInstanceKey: string]: IItemWithClassAndInstance
-  }
+  "items": PricesWithClassAndInstancesObject
 }
 
 interface IPricesWithClassAndInstancesErrorResponse {
