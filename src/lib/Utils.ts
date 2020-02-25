@@ -1,4 +1,7 @@
 import {ITradeLink} from "./declarations/TradeLink";
+import BigNumber from "bignumber.js";
+import {EnumCurrency} from "./declarations/enums/EnumCurrency";
+
 
 export class Utils {
   public static IsStringMarketHashName( name: string ): boolean {
@@ -25,5 +28,13 @@ export class Utils {
       Token: undefined,
       Partner: undefined
     };
+  }
+
+  public static ConvertPriceToCoins( price: number, currency: EnumCurrency ): number {
+    if( currency === EnumCurrency.RUB ) {
+      return Math.ceil(new BigNumber(price).multipliedBy(100).toNumber());
+    }
+
+    return Math.ceil(new BigNumber(price).multipliedBy(1000).toNumber());
   }
 }

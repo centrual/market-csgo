@@ -393,15 +393,18 @@ export class MarketCsgo {
   // endregion
 
   // region Api Methods
+  public async Prices(): Promise<PricesResponse>;
+  public async Prices(withClassAndInstance: true): Promise<PricesWithClassAndInstancesResponse>;
+  public async Prices(withClassAndInstance: false): Promise<PricesResponse>;
+  public async Prices(withClassAndInstance: true, forCurrency?: EnumCurrency): Promise<PricesWithClassAndInstancesResponse>;
+  public async Prices(withClassAndInstance: false, forCurrency?: EnumCurrency): Promise<PricesResponse>;
 
   /***
    * Fetches the price list according to the selected currency.
    * @param forCurrency The currency unit
    * @param withClassAndInstance Fetches all items in the market with extended item data like class id and instance id when it sets to true
    */
-  public async Prices(withClassAndInstance: true, forCurrency?: EnumCurrency): Promise<PricesWithClassAndInstancesResponse>;
-  public async Prices(withClassAndInstance: false, forCurrency?: EnumCurrency): Promise<PricesResponse>;
-  public async Prices(withClassAndInstance: boolean = false, forCurrency?: EnumCurrency): Promise<PricesResponse|PricesWithClassAndInstancesResponse>  {
+  public async Prices(withClassAndInstance?: boolean, forCurrency?: EnumCurrency): Promise<PricesResponse|PricesWithClassAndInstancesResponse>  {
     const endpointUrl = withClassAndInstance ? Endpoints.PricesWithClassAndInstances : Endpoints.Prices;
     const params = this.PricesParameters(forCurrency);
     return await this.CallAxios(endpointUrl, params, false);
