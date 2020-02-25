@@ -68,11 +68,13 @@ export class MarketCsgo {
   private Options: MarketCsgoOptions;
   private RateLimitedAxios: AxiosInstance;
   private UnlimitedAxios: AxiosInstance;
+  public Utils: Utils;
 
   constructor(options: Partial<MarketCsgoOptions>) {
     this.Options = DefaultOptions;
     this.RateLimitedAxios = Axios.create();
     this.UnlimitedAxios = Axios.create();
+    this.Utils = Utils;
 
     this.SetOptionsAndReinitialize(options);
   }
