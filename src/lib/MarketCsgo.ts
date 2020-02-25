@@ -35,7 +35,7 @@ import {TradesExtendedResponse} from "./declarations/responses/TradesExtendedRes
 import {BuyResponse} from "./declarations/responses/BuyResponse";
 import {IBuyParameters} from "./declarations/parameters/BuyParameters";
 import {ITradeLink} from "./declarations/TradeLink";
-import {Utils} from "./Utils";
+import {Utils, UtilsClass} from "./Utils";
 import {GetBuyInfoByCustomIdResponse} from "./declarations/responses/GetBuyInfoByCustomIdResponse";
 import {IGetBuyInfoByCustomIdParameters} from "./declarations/parameters/GetBuyInfoByCustomIdParameters";
 import {GetListBuyInfoByCustomIdResponse} from "./declarations/responses/GetListBuyInfoByCustomIdResponse";
@@ -68,7 +68,7 @@ export class MarketCsgo {
   private Options: MarketCsgoOptions;
   private RateLimitedAxios: AxiosInstance;
   private UnlimitedAxios: AxiosInstance;
-  public Utils: Utils;
+  public Utils: UtilsClass;
 
   constructor(options: Partial<MarketCsgoOptions>) {
     this.Options = DefaultOptions;

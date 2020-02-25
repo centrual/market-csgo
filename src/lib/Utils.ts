@@ -2,13 +2,12 @@ import {ITradeLink} from "./declarations/TradeLink";
 import BigNumber from "bignumber.js";
 import {EnumCurrency} from "./declarations/enums/EnumCurrency";
 
-
-export class Utils {
-  public static IsStringMarketHashName( name: string ): boolean {
+export class UtilsClass {
+  public IsStringMarketHashName( name: string ): boolean {
     return name.indexOf('_') < 1;
   }
 
-  public static GetTradeObject( tradeUrl: null|string|ITradeLink ): ITradeLink {
+  public GetTradeObject( tradeUrl: null|string|ITradeLink ): ITradeLink {
     const tradeUrlRegex = /^https:\/\/steamcommunity.com\/tradeoffer\/new\/\?partner=([0-9]{6,32})&token=([a-zA-Z0-9]{3,12})$/i;
 
     if( typeof tradeUrl === 'string' && tradeUrlRegex.test(tradeUrl) ) {
@@ -30,7 +29,7 @@ export class Utils {
     };
   }
 
-  public static ConvertPriceToCoins( price: number, currency: EnumCurrency ): number {
+  public ConvertPriceToCoins( price: number, currency: EnumCurrency ): number {
     if( currency === EnumCurrency.RUB ) {
       return Math.ceil(new BigNumber(price).multipliedBy(100).toNumber());
     }
@@ -38,3 +37,5 @@ export class Utils {
     return Math.ceil(new BigNumber(price).multipliedBy(1000).toNumber());
   }
 }
+
+export const Utils = new UtilsClass();
